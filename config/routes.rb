@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  #Users controller routes
 
   get 'users/' => 'users#index'
 
@@ -14,6 +15,18 @@ Rails.application.routes.draw do
   patch "users/:id" => "users#update"
 
   delete "users/:id" => "users#destroy", as: :delete_user
+
+  #Lists controller routes
+
+  get 'lists/' => 'lists#index'
+
+  get 'lists/new' => 'lists#new', as: :new_list
+
+  get 'lists/:id' => 'lists#show', as: :list
+
+  post 'lists/' => 'lists#create'
+
+  delete 'lists/:id' => 'lists#destroy', as: :delete_list
 
 
   

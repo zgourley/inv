@@ -1,0 +1,20 @@
+<h1>Create a new Inventory</h1>
+
+<%= form_for @list do |f| %>
+
+  <div>
+    <%= f.label :campaign%>
+    <%= f.text_field :campaign%>
+  </div>
+
+  <div>
+    <%= f.label :character%>
+    <%= f.text_field :character%>
+  </div>
+
+  <%= f.submit "Add a new inventory" %>
+
+<%end%>
+
+<%= link_to "Back to the inventory list", lists_path %>
+

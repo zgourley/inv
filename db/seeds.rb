@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = User.create({name: "Zack", email:"zackfrompedro@gmail.com"})
+
+lists = List.create({campaign: "Kevin's Campaign", character: "Jeff"})
