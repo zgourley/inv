@@ -1,0 +1,19 @@
+<h1>Edit user</h1>
+
+<%= form_for @user do |f| %>
+
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+  </div>
+
+  <div>
+    <%= f.label :email%>
+    <%= f.text_field :email%>
+  </div>
+
+  <%= f.submit "Save Changes" %>
+
+<%end%>
+
+<%= link_to "Back to user list", users_path %>
