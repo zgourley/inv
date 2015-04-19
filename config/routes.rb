@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   delete "users/:id" => "users#destroy", as: :delete_user
 
+
   #Lists controller routes
 
   get 'lists/' => 'lists#index'
@@ -27,6 +28,25 @@ Rails.application.routes.draw do
   post 'lists/' => 'lists#create'
 
   delete 'lists/:id' => 'lists#destroy', as: :delete_list
+
+
+  #Items controller routes
+
+  get 'items/' => 'items#index'
+
+  get 'items/new' => 'items#new', as: :new_item
+
+  get 'items/:id' => 'items#show', as: :item
+
+  post 'items/' => 'items#create'
+
+  get 'items/:id/edit' => 'users#edit'
+
+  patch 'items/:id' => 'items#update'
+
+  delete 'items/:id' => 'items#destroy', as: :delete_item
+
+
 
 
   
