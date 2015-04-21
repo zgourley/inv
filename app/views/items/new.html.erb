@@ -1,1 +1,19 @@
 <h1>Add a new Item</h1>
+
+<%= form_for @item do |f| %>
+
+  <div>
+    <%= f.label :%>
+    <%= f.text_field :%>
+  </div>
+
+  <div>
+    <%= f.label :character%>
+    <%= f.text_field :character%>
+  </div>
+
+  <%= f.submit "Add a new inventory" %>
+
+<%end%>
+
+<%= link_to "Back to the inventory list", lists_path %>
