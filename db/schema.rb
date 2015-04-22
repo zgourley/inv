@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150421010720) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.string   "type"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150421010720) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "items", ["list_id"], name: "index_items_on_list_id"
+  add_index "items", ["list_id"], name: "index_items_on_list_id", using: :btree
 
   create_table "lists", force: :cascade do |t|
     t.string   "campaign"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150421010720) do
     t.integer  "user_id"
   end
 
-  add_index "lists", ["user_id"], name: "index_lists_on_user_id"
+  add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -43,4 +46,6 @@ ActiveRecord::Schema.define(version: 20150421010720) do
     t.string   "password_digest"
   end
 
+  add_foreign_key "items", "lists"
+  add_foreign_key "lists", "users"
 end

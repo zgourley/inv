@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
       unless unencrypted_password.empty?
       @password = unencrypted_password
       self.password_digest = BCrypt::Password.create(unencrypted_password)
+      end
     end
 
     def authenticate(unencrypted_password)

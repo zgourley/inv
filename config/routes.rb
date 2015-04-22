@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'users/' => 'users#index'
 
-  get 'users/new' => 'users#new', as: :new_user
+  get 'signup' => 'users#new'
 
   get 'users/:id' => 'users#show', as: :user
 
@@ -47,7 +47,13 @@ Rails.application.routes.draw do
   delete 'items/:id' => 'items#destroy', as: :delete_item
 
 
+  #Sessions controller routes
 
+  get '/login'     => 'sessions#new'
+
+  post '/login'    => 'sessions#create'
+
+  delete '/logout' => 'sessions#destroy'
 
   
 
