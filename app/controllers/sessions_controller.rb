@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id.to_s
       redirect_to users_path
     else
+      flash.now[:error] = "Your email address or password are incorrect."
       render :new
     end
   end

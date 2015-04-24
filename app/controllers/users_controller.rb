@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      session[:user_id] = @user.id.to_s
+        flash[:welcome] = "Thanks for signing up, #{@user.name}!"
       redirect_to users_path
     else
       render :new
@@ -45,7 +47,7 @@ class UsersController < ApplicationController
    private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
 end

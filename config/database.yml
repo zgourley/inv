@@ -9,4 +9,10 @@ development:
   <<: *default
   database: inventory_development
 
+production:
+  <<: *default
+  database: inventory_production
+  username: inventory
+  password: <%= ENV['INVENTORY_DATABASE_PASSWORD'] %>
+
 
