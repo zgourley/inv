@@ -4,7 +4,7 @@
   <% @list.each do |list| %>
   <li>
       <%= list.campaign %> - <%= list.character %>
-      <%= link_to "View this list", items_path($item)%> 
+      <%= link_to "View this inventory", items_path($item)%> 
       <%= link_to "Delete this inventory", delete_list_path(list.id), method: :delete, data: { confirm: "Are you sure you want to delete this inventory?"} %>
   </li>
   <% end %>
