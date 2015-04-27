@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   
   #Users controller routes
 
-  get 'users/' => 'users#index'
+  root 'lists#index'
+
+  get 'users/' => 'lists#index'
 
   get 'signup' => 'users#new'
 

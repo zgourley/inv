@@ -14,9 +14,9 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create(params.require(:item).permit(:type, :description, :weight))
+    @item = Item.create(params.require(:item).permit(:item_name, :kind, :description, :weight))
 
-    if Item.save
+    if @item.save
       redirect_to items_path
 
     else
@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
 
-    if @item.update_attributes(params.require(:item).permit(:type, :description, :weight))
+    if @item.update_attributes(params.require(:item).permit(:item_name, :kind, :description, :weight))
       redirect_to items_path
     else
       render :edit

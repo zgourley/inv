@@ -1,0 +1,9 @@
+<h1> <%= @item.item_name %> </h1>
+
+<p>This is a <%= @item.item_name %>, it is a <%= @item.kind %>. It weighs <%= @item.weight %> lbs. </p>
+
+<p><strong>Description:</strong> <%= @item.description%> </p>
+
+
+<%= link_to "Edit this item", edit_item_path(@item) %>
+<%= link_to "Back to the list!", items_path %>
