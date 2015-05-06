@@ -5,6 +5,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @item = Item.new
   end
 
   def new
@@ -25,7 +26,7 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to lists_path
+    redirect_to list_path
   end
 
 end

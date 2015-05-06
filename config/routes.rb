@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
   get 'items/:id' => 'items#show', as: :item
 
-  post 'items/' => 'items#create'
+  post 'lists/:id/items' => 'items#create', as: :list_items
 
   get 'items/:id/edit' => 'users#edit'
 
