@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  
-  #Users controller routes
 
   root 'lists#index'
+  
+  #Users controller routes
 
   get 'users/' => 'lists#index'
 

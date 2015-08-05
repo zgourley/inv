@@ -1,6 +1,6 @@
 <h1>Inventory Name</h1>
 
-<%= link_to "Back to inventory list",lists_path%>
+<%= link_to "Back to inventory list",lists_path%> |
 
 <%= link_to "Add new item", new_item_path%>
 <br>
@@ -22,28 +22,31 @@
 
 <h1>Add a new Item</h1>
 
+<div class="signupbox">
+
 <%= form_for [@list, @item] do |f| %>
 
-  <div>
+  <div class="form-group">
     <%= f.label :item_name%>
     <%= f.text_field :item_name%>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :kind%>
     <%= f.text_field :kind%>
   </div>
 
-   <div>
+   <div class="form-group">
     <%= f.label :weight%>
     <%= f.number_field :weight%>
   </div>
 
-   <div>
+   <div class="form-group">
     <%= f.label :description%>
     <%= f.text_area :description%>
   </div>
 
-  <%= f.submit "Add a new item" %>
+  <%= f.submit "Add a new item", class: "btn btn-primary" %>
 
 <%end%>
+</div>

@@ -1,30 +1,31 @@
 <h1>Add a new Item</h1>
 
+<div class="signupbox">
 <%= form_for @item do |f| %>
 
-  <div>
+  <div class="form-group">
     <%= f.label :item_name%>
-    <%= f.text_field :item_name%>
+    <%= f.text_field :item_name, class: "form-control"%>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :kind%>
-    <%= f.text_field :kind%>
+    <%= f.text_field :kind, class: "form-control"%>
   </div>
 
-   <div>
+   <div class="form-group">
     <%= f.label :weight%>
-    <%= f.number_field :weight%>
+    <%= f.number_field :weight, class: "form-control"%>
   </div>
 
-   <div>
+   <div class="form-group">
     <%= f.label :description%>
-    <%= f.text_area :description%>
+    <%= f.text_area :description, class: "form-control"%>
   </div>
 
-  <%= f.submit "Add a new item" %>
+  <%= f.submit "Add a new item", class: "btn btn-primary" %>
 
 <%end%>
 
-
+</div>
 
